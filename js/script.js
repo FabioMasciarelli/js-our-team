@@ -1,5 +1,5 @@
-// const $one = document.queryselector.bind("");
-// const $all = document.queryselectorAll.bind("");
+const $one = document.querySelector.bind(document);
+const $all = document.querySelectorAll.bind(document);
 
 // creare array di oggetti con le informazioni fornite
 
@@ -36,7 +36,7 @@ const profile = [
     }
 ];
 
-const containerElem = document.querySelector(".container");
+const container = $one(".container");
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto per ogni membro del team
 // Stampare le stesse informazioni su DOM sottoforma di stringhe.
@@ -45,12 +45,19 @@ for(let i = 0; i < profile.length; i++) {
     let cardElem = document.createElement("div");
     cardElem.classList.add("card");
     let curProfile = profile[i];
-    
+    let profileAttribute;
+
     for(let key in curProfile) {
-        const keyProfile = document.createElement("div");
-        console.log(curProfile[key]);
-        keyProfile.innerHTML = curProfile[key];
-        cardElem.append(keyProfile);
+        if(key === "name" || key === "profession" ) {
+            profileAttribute = document.createElement("div");
+            profileAttribute.innerHTML = curProfile[key];
+            cardElem.append(profileAttribute);
+        } else {
+            const profileImage = document.createElement("img");
+            profileImage.src = "./img/" + curProfile[key];
+            cardElem.append(profileImage);
+        }
     }
-    containerElem.append(cardElem);
+
+    container.append(cardElem);
 }

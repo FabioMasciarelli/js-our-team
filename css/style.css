@@ -9,6 +9,10 @@ body {
     background-color: cornsilk;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1,
 p {
     margin: auto;
@@ -25,10 +29,11 @@ p {
 }
 
 .card {
+    padding-bottom: 10px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: calc(100% / 3 - 20px);
 }
