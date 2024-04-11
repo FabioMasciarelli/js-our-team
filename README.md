@@ -5,4 +5,4 @@ Creare l’array di oggetti con le informazioni fornite.
 
 Stampare su console le informazioni di nome, ruolo e la stringa della foto per ogni membro del team
 
-Stampare le stesse informazioni su DOM sottoforma di stringhe 
+Stampare le stesse informazioni su DOM sottoforma di stringhe.
