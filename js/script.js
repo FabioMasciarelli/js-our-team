@@ -41,16 +41,19 @@ const containerElem = document.querySelector(".container");
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto per ogni membro del team
 // Stampare le stesse informazioni su DOM sottoforma di stringhe.
-let result = "";
 
 for(let i = 0; i < profile.length; i++) {
+    let cardElem = document.createElement("div");
     let curProfile = profile[i];
-    console.log(curProfile);
+    // console.log(curProfile);
     
     for(let key in curProfile) {
+        const keyProfile = document.createElement("div");
         console.log(curProfile[key]);
-        result = document.createElement("div");
-        result.innerHTML = curProfile[key];
-        containerElem.innerHTML = result;
+        keyProfile.innerHTML = curProfile[key];
+        // console.log(divElem);
+        cardElem.append(keyProfile);
     }
-};
+    containerElem.append(cardElem);
+    // console.log(containerElem);
+}
